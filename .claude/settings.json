@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(sleep 6 && cat /tmp/backcommerce.log)",
+      "Read(//tmp/**)",
+      "Bash(curl -s http://localhost:5134/api/estadistica/dashboard)",
+      "Bash(curl -s -X POST http://localhost:5134/api/departamento -H \"Content-Type: application/json\" -d '{\"departamento\":\"Tecnologia\",\"activo\":true}')",
+      "Bash(curl -s -X POST http://localhost:5134/api/empleado -H \"Content-Type: application/json\" -d '{\"nombres\":\"Ana\",\"apellidos\":\"Torres\",\"sueldo\":1200,\"cargo\":\"Desarrolladora\",\"activo\":true,\"fechaNacimiento\":\"1998-05-10\",\"idDepartamento\":1002}')",
+      "Bash(curl -s -X POST http://localhost:5134/api/proyecto -H \"Content-Type: application/json\" -d '{\"proyecto\":\"Portal Web\",\"fechaInicio\":\"2026-01-01\",\"fechaFin\":\"2026-12-31\",\"activo\":true,\"presupuesto\":50000}')",
+      "Bash(pkill -f \"dotnet.*backCommerce\")",
+      "Bash(dotnet build *)",
+      "Bash(powershell -Command \"Get-Process backCommerce -ErrorAction SilentlyContinue | Stop-Process -Force\")",
+      "Bash(tasklist)",
+      "Bash(ASPNETCORE_ENVIRONMENT=Development dotnet run --launch-profile http --urls http://localhost:5134)",
+      "Bash(echo \"started with pid $!\")",
+      "Bash(sleep 6 && cat /tmp/backcommerce2.log)"
+    ]
+  }
+}
